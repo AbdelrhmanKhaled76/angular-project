@@ -1,27 +1,27 @@
 <div class="input-container">
   <div class="input-wrapper">
-    <input type="text" placeholder="Task Title..." class="task-input" />
+    <input type="text" required placeholder="Task Title..." class="task-input" [(ngModel)]="currentInput.title"/>
 
-    <textarea placeholder="Description..." class="task-input"></textarea>
+    <textarea placeholder="Description..." class="task-input" required [(ngModel)]="currentInput.description"></textarea>
 
-    <select class="task-input">
+    <select class="task-input" required [(ngModel)]="currentInput.priority">
       <option value="" disabled selected>Select Priority...</option>
       <option value="low">Low</option>
       <option value="medium">Medium</option>
       <option value="high">High</option>
     </select>
 
-    <input type="date" class="task-input" />
+    <input type="date" class="task-input" required [(ngModel)]="currentInput.date"/>
 
-    <select class="task-input">
+    <select class="task-input" required name="category" [(ngModel)]="currentInput.category">
       <option value="" disabled selected>Select Category...</option>
       <option value="work">Work</option>
       <option value="personal">Personal</option>
       <option value="study">Study</option>
     </select>
 
-    <input type="text" placeholder="Tags (comma separated)..." class="task-input" />
+    <input type="text" placeholder="Tags (comma separated)..." class="task-input" required [(ngModel)]="currentInput.tags"/>
 
-    <button type="button" class="add-button">Add Task</button>
+    <button type="button" class="add-button" (click)="onSubmit()">Add Task</button>
   </div>
 </div>

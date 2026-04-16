@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, input } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 enum Priority {
   Low,Medium,High
@@ -21,7 +22,16 @@ interface Input {
   selector: "app-input",
   templateUrl: "./Input.html",
   styleUrls: ["./Input.css"],
+  imports : [FormsModule]
 })
 export class InputComponent {
-  const inputs : Input[] = [];
+  inputs : Input[] = [] as Input[];
+  currentInput : Input = {} as Input; 
+  onSubmit() : void {
+    this.inputs.push(this.currentInput);
+    console.log(this.inputs);
+    this.currentInput = {} as Input;
+  };
+
+
 }
