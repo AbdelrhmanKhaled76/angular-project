@@ -1,0 +1,64 @@
+.input-container {
+  margin-bottom: 2.5rem;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+  animation: slideInLeft 0.5s ease forwards;
+  position: sticky;
+  top: 100px; /* Make the form stick while scrolling */
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.task-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--accents-2);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  transition: border 0.2s ease, color 0.2s ease;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.task-input::placeholder {
+  color: var(--accents-4);
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: var(--success);
+}
+
+.add-button {
+  padding: 0.75rem 1.5rem;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-button:hover {
+  background: var(--accents-7);
+  border-color: var(--accents-7);
+}

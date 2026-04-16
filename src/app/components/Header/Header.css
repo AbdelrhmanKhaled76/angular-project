@@ -1,0 +1,70 @@
+.app-header {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  color: var(--foreground);
+  padding: 2rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--accents-2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header-title {
+  font-family: var(--font-sans);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.04em;
+  color: var(--foreground);
+  text-shadow: none;
+}
+
+.header-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  color: var(--accents-5);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.navigation {
+  padding-top: 1.5rem;
+}
+
+.navigation ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.link {
+  list-style-type: none;
+}
+
+.link a {
+  text-decoration: none;
+  color: var(--accents-5);
+  background: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.link a:hover {
+  background: var(--accents-1);
+  color: var(--foreground);
+  transform: none;
+  box-shadow: none;
+}

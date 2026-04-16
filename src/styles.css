@@ -1,0 +1,45 @@
+/* Next.js/Vercel Theme Global Variables */
+:root {
+  --background: #000000;
+  --foreground: #ededed;
+  --accents-1: #111111;
+  --accents-2: #333333;
+  --accents-3: #444444;
+  --accents-4: #666666;
+  --accents-5: #888888;
+  --accents-6: #999999;
+  --accents-7: #eaeaea;
+  --accents-8: #fafafa;
+  --success: #0070f3;
+  --success-light: #3291ff;
+  --error: #e00;
+  --error-light: #ff1a1a;
+  --warning: #f5a623;
+  --warning-light: #f7b955;
+  --cyan: #50e3c2;
+  --purple: #f81ce5;
+  --magenta: #eb367f;
+  --shadow-small: 0 5px 10px rgba(0,0,0,0.12);
+  --shadow-medium: 0 8px 30px rgba(0,0,0,0.12);
+  --shadow-large: 0 30px 60px rgba(0,0,0,0.12);
+  --radius: 6px;
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base resets handled mostly in app.css or globally here */
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: var(--success);
+  color: white;
+}

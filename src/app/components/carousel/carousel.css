@@ -1,0 +1,88 @@
+.gallary-container {
+  margin: 50px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.gallary-image {
+  border-radius: 30px;
+  display: block;
+  object-fit: cover;
+}
+
+/* The Button Circle */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background-color: white;
+}
+
+.left-arrow { left: 4rem; }
+.right-arrow { right: 4rem; }
+.chevron {
+  display: inline-block;
+  border-right: 3px solid #333;
+  border-bottom: 3px solid #333;
+  width: 12px;
+  height: 12px;
+}
+
+.left {
+  transform: rotate(135deg);
+  margin-left: 4px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  margin-right: 4px;
+}
+.image-contrainer{
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+
+.dots{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  gap: 10px;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+.dot:hover{
+  background-color: gray;
+}
+.dot.active {
+  background-color: white;
+  border: 2px solid black;
+}
