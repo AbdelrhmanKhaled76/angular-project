@@ -1,0 +1,16 @@
+.toaster {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  position: fixed;
+  bottom: 5rem;
+  left: 2rem;
+  width: 500px;
+  transition: transform 300ms ease-in-out;
+  transform: translateY(300%);
+}
+
+.tasks {
+  text-align: center;
+  margin-inline: auto;
+}
