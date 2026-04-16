@@ -1,4 +1,4 @@
-import { Component, input } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { Task } from "../../interfaces/Task";
 import { v4 as uuid } from "uuid";
@@ -13,6 +13,7 @@ import { Error } from "../../interfaces/error";
   imports: [FormsModule]
 })
 export class InputComponent {
+  @Output() addTask = new EventEmitter<Task>();
   currentInput: Task = {} as Task;
   error: Error = {
     message: '',
@@ -31,6 +32,6 @@ export class InputComponent {
     }
 
     this.currentInput.id = uuid();
-    console.log(this.currentInput);
+    this.addTask.emit({ ...this.currentInput, isDone: false });
   };
 }

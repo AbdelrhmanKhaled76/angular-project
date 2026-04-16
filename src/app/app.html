@@ -3,8 +3,8 @@
   <main class="content">
     <app-carousel></app-carousel>
     <div class="main-content">
-      <app-input></app-input>
-      <app-card-list></app-card-list>
+      <app-input (addTask)="getTask($event)"></app-input>
+      <app-card-list [tasks]="tasks"></app-card-list>
     </div>
   </main>
   <app-footer></app-footer>

@@ -9,4 +9,5 @@ export interface Task {
   date: Date;
   category: Category;
   tags: string;
+  isDone?: boolean;
 }

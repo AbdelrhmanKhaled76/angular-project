@@ -4,6 +4,7 @@ import { CardList } from './components/CardList/CardList';
 import { InputComponent } from './components/Input/Input';
 import { FooterComponent } from './components/Footer/Footer';
 import { Carousel } from "./components/carousel/carousel";
+import { Task } from './interfaces/Task';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +13,9 @@ import { Carousel } from "./components/carousel/carousel";
   styleUrl: './app.css'
 })
 export class App {
+  tasks: Task[] = [];
 
+  getTask(task: Task) {
+    this.tasks.push(task);
+  }
 }
