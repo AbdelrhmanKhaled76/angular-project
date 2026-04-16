@@ -3,8 +3,15 @@
 }
 
 @keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .input-wrapper {
@@ -14,7 +21,7 @@
   width: 100%;
   animation: slideInLeft 0.5s ease forwards;
   position: sticky;
-  top: 100px; /* Make the form stick while scrolling */
+  top: 100px;
 }
 
 textarea {
@@ -30,7 +37,18 @@ textarea {
   font-size: 0.875rem;
   transition: border 0.2s ease, color 0.2s ease;
   background: var(--background);
-  color: var(--foreground);
+  color: white;
+  color-scheme: dark;
+}
+
+input[type="date"].task-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.2s ease;
+}
+
+input[type="date"].task-input::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
 }
 
 .task-input::placeholder {
@@ -61,4 +79,9 @@ textarea {
 .add-button:hover {
   background: var(--accents-7);
   border-color: var(--accents-7);
+}
+
+.error {
+  color: var(--error-light);
+  text-align: center;
 }

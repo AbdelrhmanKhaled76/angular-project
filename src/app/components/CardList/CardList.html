@@ -1,11 +1,15 @@
 <section class="card-list">
   <h2 class="section-title">Your Tasks</h2>
+  @if(tasks.length > 0){
   <div class="cards-grid">
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+    @for (task of tasks; track task.id) {
+    <app-card [task]="task"></app-card>
+    }
   </div>
+  }
+  @else {
+  <p class="tasks">no tasks added yet </p>
+  <img src="./figure-white2.jpg" alt="" class="figure">
+  }
 </section>
+<app-toaster></app-toaster>

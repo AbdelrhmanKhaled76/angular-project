@@ -10,7 +10,7 @@ body {
   color: var(--foreground);
   line-height: 1.6;
   background-image: radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.04), transparent 25%),
-                    radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.04), transparent 25%);
+    radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.04), transparent 25%);
 }
 
 .content {

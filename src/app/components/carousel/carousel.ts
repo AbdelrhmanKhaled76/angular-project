@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-carousel',
   imports: [],
   templateUrl: './carousel.html',
-  styleUrls: ['./carousel.css'],
+  styleUrl: './carousel.css',
 })
 export class Carousel {
   images: string[] = ['./1.jpeg', './2.jpeg', './3.jpeg'];
@@ -22,7 +22,7 @@ export class Carousel {
     this.currentImage = this.images[this.imageCounter];
   }
 
-  changeImageUsingIndex(idx: number): void {
+  changeImageUsingIndex(idx : number): void{
     this.imageCounter = idx;
     this.currentImage = this.images[idx];
   }

@@ -1,14 +1,16 @@
 <div class="card">
   <div class="card-header">
-    <h3 class="card-title">Complete project proposal</h3>
-    <span class="priority-badge priority-high">High</span>
+    <h3 class="card-title">{{task.title}}</h3>
+    <span class="priority-badge category-label">{{ task.category }}</span>
+    <span class="priority-badge" [class]="task.priority">{{task.priority}}</span>
   </div>
-  <p class="card-description">Draft and finalize the Q2 project proposal for the new marketing campaign. Include budget estimates and timeline.</p>
+  <p class="card-description">{{task.description}}</p>
   <div class="card-footer">
-    <span class="due-date">Due: Tomorrow</span>
-    <div class="card-actions">
-      <button class="action-btn edit-btn">Edit</button>
-      <button class="action-btn delete-btn">Delete</button>
-    </div>
+    <span class="due-date">Due: {{task.date.toDateString()}}</span>
+    <span class="tags">{{ task.tags }}</span>
+  </div>
+  <div class="card-actions">
+    <button class="action-btn edit-btn">Edit</button>
+    <button class="action-btn delete-btn">Delete</button>
   </div>
 </div>

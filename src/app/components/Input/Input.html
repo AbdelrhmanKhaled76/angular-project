@@ -1,8 +1,9 @@
 <div class="input-container">
   <div class="input-wrapper">
-    <input type="text" required placeholder="Task Title..." class="task-input" [(ngModel)]="currentInput.title"/>
+    <input type="text" required placeholder="Task Title..." class="task-input" [(ngModel)]="currentInput.title" />
 
-    <textarea placeholder="Description..." class="task-input" required [(ngModel)]="currentInput.description"></textarea>
+    <textarea placeholder="Description..." class="task-input" required
+      [(ngModel)]="currentInput.description"></textarea>
 
     <select class="task-input" required [(ngModel)]="currentInput.priority">
       <option value="" disabled selected>Select Priority...</option>
@@ -11,7 +12,7 @@
       <option value="high">High</option>
     </select>
 
-    <input type="date" class="task-input" required [(ngModel)]="currentInput.date"/>
+    <input type="date" class="task-input" required [(ngModel)]="currentInput.date" />
 
     <select class="task-input" required name="category" [(ngModel)]="currentInput.category">
       <option value="" disabled selected>Select Category...</option>
@@ -20,8 +21,13 @@
       <option value="study">Study</option>
     </select>
 
-    <input type="text" placeholder="Tags (comma separated)..." class="task-input" required [(ngModel)]="currentInput.tags"/>
+    <input type="text" name="tag" placeholder="Tags (comma separated)..." class="task-input" required
+      [(ngModel)]="currentInput.tags" />
 
+    @if(this.error.state) {
+    <p class="error">{{error.message}}</p>
+    }
     <button type="button" class="add-button" (click)="onSubmit()">Add Task</button>
+
   </div>
 </div>
