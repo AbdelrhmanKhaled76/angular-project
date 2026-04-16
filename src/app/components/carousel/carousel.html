@@ -1,17 +1,18 @@
 <section class="gallary-container">
-  <button class="arrow left-arrow" (click)="changeImagePrev()">
-    <span class="chevron left"></span>
-  </button>
-  <button class="arrow right-arrow" (click)="changeImageNext()">
-    <span class="chevron right"></span>
-  </button>
   <div class="image-container">
-  <img [src]="currentImage" alt="carousel" class="gallary-image" width="500" height="500">
-
-  <div class="dots">
-    <button type="button" class="dot" [class.active]="imageCounter === 0" (click)="changeImageUsingIndex(0)"></button>
-    <button type="button" class="dot" [class.active]="imageCounter === 1" (click)="changeImageUsingIndex(1)"></button>
-    <button type="button" class="dot" [class.active]="imageCounter === 2" (click)="changeImageUsingIndex(2)"></button>
+    <button class="prev black" (click)="changeImagePrev()">
+      <span>PREV</span>
+    </button>
+    <button class="next black" (click)="changeImageNext()">
+      <span>NEXT</span>
+    </button>
+    
+    <img [src]="currentImage" alt="carousel" class="gallary-image" width="500" height="500">
+    
+    <div class="dots">
+      <button type="button" class="dot" [class.active]="imageCounter === 0" (click)="changeImageUsingIndex(0)"></button>
+      <button type="button" class="dot" [class.active]="imageCounter === 1" (click)="changeImageUsingIndex(1)"></button>
+      <button type="button" class="dot" [class.active]="imageCounter === 2" (click)="changeImageUsingIndex(2)"></button>
+    </div>
   </div>
-</div>
 </section>
