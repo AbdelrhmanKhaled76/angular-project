@@ -4,6 +4,11 @@
     <span class="priority-badge category-label">{{ task.category }}</span>
     <span class="priority-badge" [class]="task.priority">{{task.priority}}</span>
   </div>
+  <div class="status-row" style="margin-bottom: 1rem; text-align: left;">
+    <span class="priority-badge" [class.low]="task.isDone" [class.medium]="!task.isDone">
+      {{ task.isDone ? 'Done' : 'In Progress' }}
+    </span>
+  </div>
   <p class="card-description">{{task.description}}</p>
   <div class="card-footer">
     <span class="due-date">Due: {{task.date}}</span>
@@ -11,6 +16,6 @@
   </div>
   <div class="card-actions">
     <button class="action-btn edit-btn">Edit</button>
-    <button class="action-btn delete-btn">Delete</button>
+    <button class="action-btn delete-btn" (click)="onDelete()">Delete</button>
   </div>
 </div>

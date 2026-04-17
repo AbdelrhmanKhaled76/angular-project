@@ -8,6 +8,11 @@
   width: 500px;
   transition: transform 300ms ease-in-out;
   transform: translateY(300%);
+  z-index: 1000;
+}
+
+.toaster.show {
+  transform: translateY(0);
 }
 
 .tasks {

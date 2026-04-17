@@ -3,6 +3,7 @@ import { FormsModule } from "@angular/forms";
 import { Task } from "../../interfaces/Task";
 import { v4 as uuid } from "uuid";
 import { Error } from "../../interfaces/error";
+import { ToasterState } from "../../types/toasterState";
 
 
 
@@ -14,6 +15,8 @@ import { Error } from "../../interfaces/error";
 })
 export class InputComponent {
   @Output() addTask = new EventEmitter<Task>();
+  @Output() isState = new EventEmitter<ToasterState>();
+
   currentInput: Task = {} as Task;
   error: Error = {
     message: '',
@@ -27,11 +30,13 @@ export class InputComponent {
       if (!this.currentInput[field]) {
         this.error.state = true;
         this.error.message = `${field} field is required`;
+        this.isState.emit("danger");
         return;
       }
     }
 
     this.currentInput.id = uuid();
     this.addTask.emit({ ...this.currentInput, isDone: false });
+    this.isState.emit("success");
   };
 }

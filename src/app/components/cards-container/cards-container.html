@@ -1,1 +1,7 @@
-<p>cards-container works!</p>
+<div class="navigator">
+  <button type="button" [class.active]="activeFilter === 'all'" (click)="filtering('all')">All</button>
+  <button type="button" [class.active]="activeFilter === 'inProgress'" (click)="filtering('inProgress')">In
+    Progress</button>
+  <button type="button" [class.active]="activeFilter === 'done'" (click)="filtering('done')">Done</button>
+</div>
+<app-card-list [title]="listTitle" [tasks]="filteredTasks"></app-card-list>

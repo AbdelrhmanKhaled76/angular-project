@@ -6,8 +6,10 @@ import { Toaster } from "../toaster/toaster";
   selector: "app-card",
   templateUrl: "./Card.html",
   styleUrls: ["./Card.css"],
-  imports: [Toaster],
 })
 export class Card {
   @Input() task !: Task;
+  onDelete(): void {
+    this.task.isDone = true;
+  }
 }

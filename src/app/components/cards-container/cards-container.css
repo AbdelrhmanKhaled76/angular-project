@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  padding: 1.5rem;
+  background-color: var(--background);
+}
+
+.navigator {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--accents-2);
+}
+
+.navigator button {
+  background-color: transparent;
+  color: var(--accents-5);
+  border: 1px solid var(--accents-2);
+  border-radius: 2rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+}
+
+.navigator button:hover {
+  background-color: var(--accents-1);
+  color: var(--foreground);
+  border-color: var(--accents-4);
+}
+
+.navigator button.active {
+  background-color: var(--foreground);
+  color: var(--background);
+  border-color: var(--foreground);
+  font-weight: 600;
+}

@@ -1,25 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Priority } from '../../enums/Priority';
+import { ToasterState } from '../../types/toasterState';
+
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-toaster',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './toaster.html',
   styleUrl: './toaster.css',
 })
 export class Toaster {
-  state: 'danger' | 'warning' | 'success' = 'warning';
-  message: string = ""
-  stateConverter(): string {
+  @Input() state: ToasterState = 'warning';
+  @Input() isAction: boolean = false;
+  
+  get message(): string {
     switch (this.state) {
       case 'success':
-        this.message = "you inserted the task successfully";
+        return "you inserted the task successfully";
+      case 'warning':
+        return "warning this issue might happen";
+      case 'danger':
+        return "error something went wrong";
+      default:
+        return '';
+    }
+  }
+
+  get stateClass(): string {
+    switch (this.state) {
+      case 'success':
         return Priority.Low;
       case 'warning':
-        this.message = "warning this issue might happen";
         return Priority.Medium;
       case 'danger':
-        this.message = "error something went wrong";
         return Priority.High;
       default:
         return '';
