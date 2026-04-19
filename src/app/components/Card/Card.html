@@ -11,11 +11,14 @@
   </div>
   <p class="card-description">{{task.description}}</p>
   <div class="card-footer">
-    <span class="due-date">Due: {{task.date}}</span>
+    <span class="due-date">Due: {{ task.date | date:'mediumDate' }}</span>
     <span class="tags">{{ task.tags }}</span>
   </div>
+  @if (!task.isDone) {
+  <button class="action-btn done-btn" (click)="onDone()">Done</button>
+  }
   <div class="card-actions">
-    <button class="action-btn edit-btn">Edit</button>
+    <button class="action-btn edit-btn" (click)="onEdit()">Edit</button>
     <button class="action-btn delete-btn" (click)="onDelete()">Delete</button>
   </div>
 </div>

@@ -4,8 +4,8 @@
     <app-carousel></app-carousel>
     <app-toaster [isAction]="isAction" [state]="state"></app-toaster>
     <div class="main-content">
-      <app-input (addTask)="getTask($event)" (isState)="handleInputState($event)"></app-input>
-      <app-cards-container [tasks]="tasks"></app-cards-container>
+      <app-input (addTask)="handleAddTask($event)" [taskToEdit]="taskToEdit" (updateTask)="handleUpdateTask($event)" (isState)="handleInputState($event)"></app-input>
+      <app-cards-container [task]="task" (deleteTask)="handleDeleteTask($event)" (editTask)="handleEditTask($event)" (notifyDeath)="handleComponentDeath()"></app-cards-container>
     </div>
   </main>
   <app-footer></app-footer>

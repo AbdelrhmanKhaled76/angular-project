@@ -27,7 +27,7 @@
     @if(this.error.state) {
     <p class="error">{{error.message}}</p>
     }
-    <button type="button" class="add-button" (click)="onSubmit()">Add Task</button>
+    <button type="button" class="add-button" (click)="onSubmit()">{{ currentInput.id ? 'Update Task' : 'Add Task' }}</button>
 
   </div>
 </div>

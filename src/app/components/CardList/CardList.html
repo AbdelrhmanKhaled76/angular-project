@@ -1,9 +1,9 @@
 <section class="card-list">
-  <h2 class="section-title">{{ title }}</h2>
-  @if(tasks.length > 0){
+  <h2 class="section-title">{{ listTitle }}</h2>
+  @if(filteredTasks.length > 0){
   <div class="cards-grid">
-    @for (task of tasks; track task.id) {
-    <app-card [task]="task"></app-card>
+    @for (task of filteredTasks; track task.id) {
+    <app-card [task]="task" (deleteTask)="onDeleteTask($event)" (editTask)="editTask.emit($event)" (notifyDeath)="notifyDeath.emit()"></app-card>
     }
   </div>
   }

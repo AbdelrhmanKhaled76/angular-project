@@ -1,1 +1,1 @@
-export type ToasterState = 'danger' | 'warning' | 'success';
+export type ToasterState = 'danger' | 'warning' | 'success' | 'dead';

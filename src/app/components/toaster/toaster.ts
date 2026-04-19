@@ -22,6 +22,8 @@ export class Toaster {
         return "warning this issue might happen";
       case 'danger':
         return "error something went wrong";
+      case 'dead':
+        return "this component is dead";
       default:
         return '';
     }
@@ -34,6 +36,7 @@ export class Toaster {
       case 'warning':
         return Priority.Medium;
       case 'danger':
+      case 'dead':
         return Priority.High;
       default:
         return '';

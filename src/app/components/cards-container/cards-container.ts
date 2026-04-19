@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { CardList } from "../CardList/CardList";
 import { Task } from '../../interfaces/Task';
 
@@ -8,31 +8,19 @@ import { Task } from '../../interfaces/Task';
   templateUrl: './cards-container.html',
   styleUrl: './cards-container.css',
 })
-export class CardsContainer {
-  @Input() tasks: Task[] = [] as Task[];
+export class CardsContainer implements OnDestroy {
+  @Input() task: Task = {} as Task;
+  @Output() deleteTask = new EventEmitter<string>();
+  @Output() editTask = new EventEmitter<Task>();
+  @Output() notifyDeath = new EventEmitter<void>();
+  
   activeFilter: "all" | "inProgress" | "done" = "all";
-
-  get listTitle(): string {
-    switch (this.activeFilter) {
-      case 'done': return 'Done Tasks';
-      case 'inProgress': return 'In Progress Tasks';
-      default: return 'All Tasks';
-    }
-  }
-
-  get filteredTasks(): Task[] {
-    switch (this.activeFilter) {
-      case "done":
-        return this.tasks.filter(task => task.isDone);
-      case "inProgress":
-        return this.tasks.filter(task => !task.isDone);
-      default:
-        return this.tasks;
-    }
-  }
 
   filtering(pageName: "all" | "inProgress" | "done"): void {
     this.activeFilter = pageName;
-  };
+  }
 
+  ngOnDestroy(): void {
+    this.notifyDeath.emit();
+  }
 }

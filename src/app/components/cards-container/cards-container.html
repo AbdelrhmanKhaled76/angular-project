@@ -4,4 +4,4 @@
     Progress</button>
   <button type="button" [class.active]="activeFilter === 'done'" (click)="filtering('done')">Done</button>
 </div>
-<app-card-list [title]="listTitle" [tasks]="filteredTasks"></app-card-list>
+<app-card-list [task]="task" [filter]="activeFilter" (deleteTask)="deleteTask.emit($event)" (editTask)="editTask.emit($event)" (notifyDeath)="notifyDeath.emit()"></app-card-list>
